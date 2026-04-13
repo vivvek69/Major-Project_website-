@@ -6,17 +6,16 @@ type Stat = {
   label: string
 }
 
-type Achievement = {
-  title: string
-  detail: string
-  year: string
-}
-
 type Certificate = {
   title: string
   issuer: string
   date: string
   fileHref: string
+}
+
+type ExpoPhoto = {
+  title: string
+  imageHref: string
 }
 
 const stats: Stat[] = [
@@ -25,54 +24,79 @@ const stats: Stat[] = [
   { value: '9', label: 'featured project demos' },
 ]
 
-const achievements: Achievement[] = [
-  {
-    title: 'Conference speaker spotlight',
-    detail: 'Delivered a technical session on practical project workflows and presentation strategy.',
-    year: '2025',
-  },
-  {
-    title: 'Project showcase winner',
-    detail: 'Recognized for a polished end-to-end demo that balanced design, clarity, and impact.',
-    year: '2024',
-  },
-  {
-    title: 'Community contribution award',
-    detail: 'Acknowledged for mentoring, knowledge sharing, and helping peers ship stronger work.',
-    year: '2024',
-  },
-]
-
 const certificates: Certificate[] = [
   {
-    title: 'Professional conference certificate',
-    issuer: 'Tech Summit Series',
-    date: 'October 2025',
+    title: 'P Vivek',
+    issuer: 'ICEARS Conferences 2026',
+    date: 'Feb 2026',
     fileHref: new URL('../29-1.pdf', import.meta.url).href,
   },
   {
-    title: 'Project presentation certification',
-    issuer: 'Innovation Forum',
-    date: 'June 2025',
+    title: 'M. Raju',
+    issuer: 'ICEARS Conferences 2026',
+    date: 'Feb 2026',
     fileHref: new URL('../29-2.pdf', import.meta.url).href,
   },
   {
-    title: 'Advanced delivery workshop',
-    issuer: 'Leadership in Tech Lab',
-    date: 'January 2025',
+    title: 'S. Pravalika',
+    issuer: 'ICEARS Conferences 2026',
+    date: 'Feb 2026',
     fileHref: new URL('../29-3.pdf', import.meta.url).href,
   },
   {
-    title: 'Portfolio storytelling badge',
-    issuer: 'Creator Conference',
-    date: 'September 2024',
+    title: 'R Nirmal',
+    issuer: 'ICEARS Conferences 2026',
+    date: 'Feb 2026',
     fileHref: new URL('../29-4.pdf', import.meta.url).href,
   },
   {
-    title: 'Project showcase completion',
-    issuer: 'Creator Conference',
-    date: 'August 2024',
+    title: 'B Kaartheesha',
+    issuer: 'ICEARS Conferences 2026',
+    date: 'Feb 2026',
     fileHref: new URL('../29-5.pdf', import.meta.url).href,
+  },
+]
+
+const expoPhotos: ExpoPhoto[] = [
+  {
+    title: 'Expo Moment 01',
+    imageHref: new URL('../WhatsApp Image 2026-03-18 at 6.45.06 PM.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 02',
+    imageHref: new URL('../IMG_20260317_162210.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 03',
+    imageHref: new URL('../IMG_20260316_153025.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 04',
+    imageHref: new URL('../20260317_32918PMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 05',
+    imageHref: new URL('../20260317_12312PMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 06',
+    imageHref: new URL('../20260317_12311PMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 07',
+    imageHref: new URL('../20260316_11923PMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 08',
+    imageHref: new URL('../20260316_115541AMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 09',
+    imageHref: new URL('../20260316_115538AMByGPSMapCamera.jpg.jpeg', import.meta.url).href,
+  },
+  {
+    title: 'Expo Moment 10',
+    imageHref: new URL('../Picsart_26-03-10_18-50-54-017.jpg.jpeg', import.meta.url).href,
   },
 ]
 
@@ -108,13 +132,13 @@ function App() {
 
       <header className="topbar">
         <div>
-          <p className="eyebrow">Professional portfolio</p>
-          <h1>Achievements, certificates, and project storytelling in one place.</h1>
+          <p className="eyebrow">An emphathic Ai companion</p>
+          <h1>Certificates, expo photos, and project storytelling in one place.</h1>
         </div>
 
         <nav className="topbar-nav" aria-label="Primary">
-          <a href="#achievements">Achievements</a>
           <a href="#certificates">Certificates</a>
+          <a href="#expo-photos">Expo Photos</a>
           <a href="#project-video">Video</a>
         </nav>
       </header>
@@ -125,7 +149,7 @@ function App() {
             <p className="eyebrow">Conference-ready presentation site</p>
             <h2>Show your best work with a layout that feels polished, modern, and credible.</h2>
             <p className="hero-text">
-              This site is built to present real achievements, conference certificates,
+              This site is built to present real conference certificates, expo photos,
               and a project explanation video so visitors can understand your story fast.
             </p>
 
@@ -158,23 +182,6 @@ function App() {
               ))}
             </dl>
           </aside>
-        </section>
-
-        <section className="section-block" id="achievements">
-          <div className="section-heading">
-            <p className="eyebrow">Selected achievements</p>
-            <h2>Recognition that gives your portfolio proof and momentum.</h2>
-          </div>
-
-          <div className="card-grid three-up">
-            {achievements.map((achievement) => (
-              <article className="info-card" key={achievement.title}>
-                <span className="card-year">{achievement.year}</span>
-                <h3>{achievement.title}</h3>
-                <p>{achievement.detail}</p>
-              </article>
-            ))}
-          </div>
         </section>
 
         <section className="section-block" id="certificates">
@@ -226,10 +233,31 @@ function App() {
             </button>
           </div>
         </section>
+
+        <section className="section-block" id="expo-photos">
+          <div className="section-heading split">
+            <div>
+              <p className="eyebrow">Expo photos</p>
+              <h2>Moments from An emphathic Ai companion presentations and exhibition events.</h2>
+            </div>
+            <p className="section-note">
+              A visual gallery from conference and expo sessions connected to this project.
+            </p>
+          </div>
+
+          <div className="expo-gallery">
+            {expoPhotos.map((photo) => (
+              <article className="expo-photo-card" key={photo.title}>
+                <img src={photo.imageHref} alt={photo.title} loading="lazy" />
+                <p>{photo.title}</p>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
 
       <footer className="footer">
-        <p>Built for a professional portfolio experience with achievements, certificates, and a featured video.</p>
+        <p>Built for a professional portfolio experience with certificates, expo photos, and a featured video.</p>
       </footer>
 
       {isVideoOpen ? (

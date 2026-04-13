@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: video-app-portfolio
+    name: an-emphathic-ai-companion
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist
